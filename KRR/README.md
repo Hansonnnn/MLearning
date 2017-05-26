@@ -18,9 +18,9 @@
 
 下面模块代码中`kRR.py` 是没有经过平滑使用核岭回归对黄金价格时间序列的预测。
 
-![image](../MLstudy/file/KRR.jpeg)
+![image](../file/KRR.jpeg)
 
 另外`smoothKRR.py`是在经过平滑之后得出的预测结果。
 
-![image](../MLstudy/file/smoothKRR.jpeg)
+![image](../file/smoothKRR.jpeg)
 
