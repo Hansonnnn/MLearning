@@ -8,7 +8,7 @@ import dateutil.parser as dparser
 
 np.random.seed(10)
 
-tartgetValue=np.genfromtxt("/Users/hanzhao/PycharmProjects/MLstudy/file/Gold.csv",
+targetValue=np.genfromtxt("/Users/hanzhao/PycharmProjects/MLstudy/file/Gold.csv",
                            skip_header=1,
                            dtype=None,
                            delimiter=',',
@@ -24,4 +24,9 @@ knl=kg.kernel(trainingPoints,trainingPoints)
 knlTest=kg.kernel(testPoints,trainingPoints)
 
 knlRidge=KernelRidge(lmb=0.01,kernel=None)
-knlRidge.learn(knl,tartgetValue)
+knlRidge.learn(knl,targetValue)
+resultPoints=knlRidge.pred(knlTest)
+fig=plt.figure(1)
+plot1=plt.plot(trainingPoints,targetValue,'o')
+plot2=plt.plot(testPoints,resultPoints)
+plt.show()
