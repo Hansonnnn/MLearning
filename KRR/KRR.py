@@ -1,6 +1,6 @@
 #coding utf-8
 import numpy as np
-import mlpy
+from mlpy import KernelGaussian
 from pylab import *
 from mlpy import KernelRidge
 import matplotlib.pyplot as plt
@@ -19,8 +19,9 @@ trainingPoints=np.arange(125).reshape(-1,1)
 testPoints=np.arange(126).reshape(-1,1)
 
 ##kernel matrix
-knl=mlpy.kernel_gaussion(trainingPoints, trainingPoints, sigma=1)
-knlTest=mlpy.kernel_gaussion(testPoints,testPoints,sigma=1)
+kg=KernelGaussian()
+knl=kg.kernel(trainingPoints,trainingPoints)
+knlTest=kg.kernel(testPoints,trainingPoints)
 
 knlRidge=KernelRidge(lmb=0.01,kernel=None)
 knlRidge.learn(knl,tartgetValue)
