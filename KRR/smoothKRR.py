@@ -1,3 +1,4 @@
+#coding utf-8
 import matplotlib.pyplot as plt
 import numpy as np
 from mlpy import KernelGaussian
@@ -5,6 +6,7 @@ import dateutil.parser as dparser
 from pylab import *
 import mlpy
 
+#平滑黄金价格时间序列
 def smooth(x,window_len):
 
         s=np.r_[2*x[0]-x[window_len-1::-1],x,2*x[-1]-x[-1:-window_len:-1]]
