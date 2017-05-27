@@ -1,5 +1,6 @@
 import csv
 
+
 def list_words(text):
     words = []
     words_tmp = text.lower().split()
@@ -10,7 +11,7 @@ def list_words(text):
 
 
 def training(texts):
-    words=[]
+    words = []
     c_word = {}
     c_categories = {}
     c_texts = 0
@@ -25,10 +26,10 @@ def training(texts):
         words = list_words(t[0])
     for p in words:
         if p not in c_word:
-          c_total_words = c_total_words + 1
-          c_word[p] = {}
-          for c in c_categories:
-            c_word[p][c] = 0
+            c_total_words = c_total_words + 1
+            c_word[p] = {}
+            for c in c_categories:
+                c_word[p][c] = 0
         c_word[p][t[1]] = c_word[p][t[1]] + 1
     return (c_word, c_categories, c_texts, c_total_words)
 
@@ -55,23 +56,23 @@ def classifier(subject_line, c_words, c_categories, c_texts, c_tot_words):
 
     return (category, category_prob)
 
+
 if __name__ == "__main__":
 
     with open('/Users/hanzhao/PycharmProjects/MLstudy/file/training.csv') as f:
         subjects = dict(csv.reader(f, delimiter=','))
-        p,c,t,tp = training(subjects.items())
+        p, c, t, tp = training(subjects.items())
 
-        #First Test
-        clase = classifier("FREE Cell Phone + $50 Cash Back",p,c,t,tp)
+        # First Test
+        clase = classifier("FREE Cell Phone + $50 Cash Back", p, c, t, tp)
         print("Result: {0} ".format(clase))
 
-
-    #Second Test
+    # Second Test
     with open("/Users/hanzhao/PycharmProjects/MLstudy/file/test.csv") as f:
         correct = 0
         tests = csv.reader(f)
         for subject in tests:
-            clase = classifier(subject[0],p,c,t,tp)
+            clase = classifier(subject[0], p, c, t, tp)
             if clase[0] == subject[1]:
                 correct += 1
         print("Efficiency {0} of 10".format(correct))
