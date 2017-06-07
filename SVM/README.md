@@ -25,13 +25,13 @@ SVM训练算法创建一个将新的实例分配给两个类别之一的模型�
 线性SVM有两个主要的限制；第一，结果分类器将是线性的，第二，需要一个可以进行线性分解的数据集。由于现实当中很多问题并不是线性的，所以需要尝试
 使用不同的内核来解决。SVM支持以下几种内核。
 
-*多项式，在mlpy3.5中定义为 kernel_type='poly'
+* 多项式(在mlpy3.5中定义为 kernel_type='poly')
 
-*高斯,kernel_type='rbf'
+* 高斯(kernel_type='rbf')
 
-*反曲，kernel_type='linear'
+* 反曲(kernel_type='linear')
 
-*动态模量主曲线,kernel_type='sigmoid'
+* 动态模量主曲线(kernel_type='sigmoid')
 
 
 
