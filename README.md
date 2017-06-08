@@ -3,6 +3,7 @@ this repository is route with learn ML and some test example.
 
 
 #### third-party
+* python 2.7
 
 * [mlpy ](https://sourceforge.net/projects/mlpy/files/)
 
