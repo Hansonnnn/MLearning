@@ -109,6 +109,19 @@ iris数据集。
 ![image](../file/euclideanmetric.png)
 
 
+### 图像分类器
+
+[TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0)
+
+ TF-Learn
+
+* 收集训练数据
+
+为每种类型的训练图像数据创建一个文件夹，在文件夹中放入同类型的图像。如：训练关于花的分类器
+就要为每种类型的花创建一个文件夹，然后在每个文件夹下放入同类型花的图像。
+
+
+
 
 
 
