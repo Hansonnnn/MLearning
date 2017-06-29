@@ -16,7 +16,7 @@
 
 #### 机器学习
 
-* 监督学习（Classifer）
+* [监督学习](../google/Supervised.md)（Classifer）
 
 Supervised Learing Recipe
 
