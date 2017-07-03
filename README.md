@@ -13,5 +13,7 @@ this repository is route with learn ML and some test example.
 
 * [scipy](https://www.scipy.org/)
 
+* [scikit-learn](http://scikit-learn.org/stable/)
+
 
 
