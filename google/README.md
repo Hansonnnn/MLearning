@@ -14,6 +14,8 @@
 
 * [TensorFlow](https://www.tensorflow.org/)
 
+* [numpy](../numpy.md)
+
 #### 机器学习
 
 * [监督学习](../google/Supervised.md)（Classifer）
