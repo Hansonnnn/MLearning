@@ -104,6 +104,74 @@ print np.dot(A,B)
 
 ```
 
+* 向上转型
+
+在数组中出现多种不同类型的元素（比如小位元素与大位元素）或者数组计算后的结果更为复杂，比如精度更高。需要使用到向上转型数组类型
+
+来存储其中的元素。
+
+```
+c = np.array([ 1.        ,  2.57079633,  4.14159265])
+print c
+print c.dtype.name
+
+d = np.exp(c*1j)
+
+print d.dtype.name
+print d
+
+```
+
+* 功能函数
+
+numpy中对于其数组带有一些可以直接调用的数学功能函数。如下示例
+
+```
+h = np.arange(1,5,2)
+
+print h
+print h.sum()
+print h.max()
+print h.min()
+
+```
+以上示例只是简单的一维维度的计算，根据源码观察，这些提供的功能函数是支持多维当中的计算。
+如下对sum函数的源码研究
+
+```
+    def sum(self, axis=None, dtype=None, out=None): # real signature unknown; restored from __doc__
+        """
+        a.sum(axis=None, dtype=None, out=None)
+
+            Return the sum of the array elements over the given axis.
+
+            Refer to `numpy.sum` for full documentation.
+
+            See Also
+            --------
+            numpy.sum : equivalent function
+        """
+        pass
+```
+
+```
+h = np.arange(12).reshape(3,4)
+
+print h
+print h.sum(axis=0)
+print h.max(axis=0)
+print h.min(axis=1)
+
+```
+
+* 通用方法
+
+
+
+
+
+
+
 
 
 
