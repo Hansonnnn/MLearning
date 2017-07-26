@@ -18,5 +18,5 @@ predict = clf.predict(x_test)
 
 """使用测试集计算决策树分类器预测准确率"""
 from sklearn.metrics import accuracy_score
-print accuracy_score(y_test,predict)
+print (accuracy_score(y_test,predict))
 

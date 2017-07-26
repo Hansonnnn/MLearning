@@ -4,7 +4,6 @@ import numpy as np
 
 def softmax(score):
 
-
     return np.exp(score)/np.sum(np.exp(score),axis=0)
 print (softmax(scores))
 
