@@ -13,7 +13,7 @@
 
 * 建立在Logistic函数之上
 
-* Logistic 回归模型 : ![image](../file/Logistic model.png)
+* Logistic 回归模型 : ![image](../file/Logistic_model.png)
 
 
 >特征选择
