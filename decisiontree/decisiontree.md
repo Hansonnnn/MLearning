@@ -13,13 +13,13 @@
 
 信息熵定义：
 
-[!image](../file/ent.png)
+![image](../file/ent.png)
 
 信息熵越小，数据集D的纯度越高。
 
 信息增益定义：
 
-[!iamge](../file/Gain.png)
+![image](../file/Gain.png)
 
 ID3选取信息增益最大的属性作为划分属性即分支节点。
 
