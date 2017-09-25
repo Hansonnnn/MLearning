@@ -1,8 +1,5 @@
 ## Google ML （this section is about ML with google）
 
-
-* this section is about ML with google
-
 * [google机器学习入门 URL](https://www.youtube.com/watch?v=tNa99PG8hR8&index=2&list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
 
 ### Hello world
