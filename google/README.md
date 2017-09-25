@@ -1,10 +1,9 @@
-## Google ML
+## Google ML （this section is about ML with google）
 
->机器学习可以说是一种可以从样本数据中学习的算法（规则）来取代硬编码过程
 
 * this section is about ML with google
 
-* [URL](https://www.youtube.com/watch?v=tNa99PG8hR8&index=2&list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+* [google机器学习入门 URL](https://www.youtube.com/watch?v=tNa99PG8hR8&index=2&list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
 
 ### Hello world
 
@@ -17,6 +16,8 @@
 * [numpy](../numpy.md)
 
 #### 机器学习
+
+>机器学习可以说是一种可以从样本数据中学习的算法（规则）来取代硬编码过程
 
 * [监督学习](../google/Supervised.md)（Classifer）
 
