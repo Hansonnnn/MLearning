@@ -5,5 +5,5 @@ lables = ["0","0","1","1"]
 clf=tree.DecisionTreeClassifier()
 clf=clf.fit(features,lables)
 
-print clf.predict([[150,0]])
+print (clf.predict([[150,0]]))
 

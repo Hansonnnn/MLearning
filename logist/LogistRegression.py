@@ -30,3 +30,4 @@ def plot_best_fit(weights):
     plt.show()
 
 
+plot_best_fit(None)
