@@ -40,18 +40,25 @@ def sigmoid(inx):
 def grad_ascent(data_mat_in, class_labels):
     """@description the batch grad ascent of logist function
        @param data_mat_in the input of X matrix
-       @param class_labels the output of Y matrix"""
+       @param class_labels the output of Y matrix
+       
+       
+       repeat {
+       
+        Wj := Wj + alpha * (y - f(x)) * Xj
+       }
+       """
 
     data_matrix = np.mat(data_mat_in)
     label_mat = np.mat(class_labels).transpose()
     m, n = np.shape(data_matrix)
-    alpha = 0.001  # the learning speed
+    alpha = 0.003  # the learning speed
     max_cycles = 500
-    weights = np.ones((n, 1))
+    weights = np.zeros((n, 1))
     for k in range(max_cycles):
-        h = sigmoid(data_matrix * weights)
-        error = (label_mat - h)
-        weights += alpha * data_matrix.transpose() * error
+        predict = sigmoid(data_matrix * weights)
+        cost = (label_mat - predict)
+        weights += alpha * data_matrix.transpose() * cost
     return weights
 
 
@@ -66,20 +73,30 @@ def soc_grad_ascent(data_mat_in, class_label):
     """
     data_matrix = np.array(data_mat_in)
     m, n = np.shape(data_matrix)
-    alpha = 0.01  # the learning speed
+    alpha = 0.007  # the learning speed
     weights = np.ones(n)
     for i in range(m):
         h = sigmoid(data_matrix[i] * weights)
         error = (class_label[i] - h)
-        weights = weights + alpha * data_matrix[i] * error
+        weights += alpha * data_matrix[i] * error
     return weights
 
 
 def soc_grad_ascent1(data_mat_in, class_label, iter_nums=150):
-    """@description the stochastic grad ascent of logist function after modify 
+    """@description the stochastic grad ascent with logist function after modify 
        @param data_mat_in the input of X matrix
        @param class_label the output of Y matrix
-       @param iter_nums the bumbers of iterator"""
+       @param iter_nums the bumbers of iterator
+       
+       loop{
+       
+         for i in range(m)
+            
+          Wj := Wj + alpha * (y - f(x)) * Xj
+       
+       }    
+       
+       """
     data_matrix = np.array(data_mat_in)
     m, n = np.shape(data_matrix)
     weights = np.ones(n)
@@ -96,6 +113,6 @@ def soc_grad_ascent1(data_mat_in, class_label, iter_nums=150):
 
 
 data_arr, label_mat = load_data()
-weights = soc_grad_ascent(data_arr, label_mat)
+weights = grad_ascent(data_arr, label_mat)
 
 plot_best_fit(weights)
