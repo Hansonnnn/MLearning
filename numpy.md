@@ -1,6 +1,6 @@
 ### numpy学习
 
-#### 基础常用
+#### 基本常用
 
 ```
 import numpy as np
@@ -165,6 +165,46 @@ print h.min(axis=1)
 ```
 
 * 通用方法
+
+numpy 在数据分析或数据挖掘当中也可以提供一些功能性函数，比如：
+
+np.std() 求某一维度的方差
+
+np.mean() 求某一维度的平均值
+
+np.hstack()  叠加两个维度的数据为一个维度，比如
+
+```
+a = np.arange(0,12,3).reshape(-1,1)
+print a
+
+b = np.arange(0,16,4).reshape(-1,1)
+print b
+
+print np.hstack((a,b))
+
+
+[[0]
+ [3]
+ [6]
+ [9]]
+
+
+ [[ 0]
+ [ 4]
+ [ 8]
+ [12]]
+
+
+[[ 0  0]
+ [ 3  4]
+ [ 6  8]
+ [ 9 12]]
+```
+
+np.histogram() 计算某一维度的直方图用来观察数据分布。
+
+
 
 
 
