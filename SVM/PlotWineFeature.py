@@ -13,7 +13,7 @@ xaxis3=[];yaxis3=[]
 x=0
 y=1
 
-print matrix
+print (matrix)
 
 """将13种属性执行降维，根据数据集绘制出13种属性中的前两种属性"""
 
