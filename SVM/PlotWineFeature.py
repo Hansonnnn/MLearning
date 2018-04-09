@@ -1,23 +1,31 @@
 # -*- coding:utf-8 -*-
 import matplotlib.pyplot as plt
+
+
 def getData():
-    lists=[line.strip().split(',')for line in open('/Users/hanzhao/PycharmProjects/MLstudy/file/wine.data','r').readlines()]
+    lists = [line.strip().split(',') for line in
+             open('/Users/hanzhao/PycharmProjects/MLstudy/file/wine.data', 'r').readlines()]
 
-    return [ list(l[1:14]) for l in lists],[l[0] for l in lists]
-matrix,labels=getData()
+    return [list(l[1:14]) for l in lists], [l[0] for l in lists]
 
-xaxis1=[];yaxis1=[]
-xaxis2=[];yaxis2=[]
-xaxis3=[];yaxis3=[]
 
-x=0
-y=1
+matrix, labels = getData()
 
-print (matrix)
+xaxis1 = [];
+yaxis1 = []
+xaxis2 = [];
+yaxis2 = []
+xaxis3 = [];
+yaxis3 = []
+
+x = 0
+y = 1
+
+print(matrix)
 
 """将13种属性执行降维，根据数据集绘制出13种属性中的前两种属性"""
 
-for n,elem in enumerate(matrix):
+for n, elem in enumerate(matrix):
     if int(labels[n]) == 1:
         xaxis1.append(matrix[n][x])
         yaxis1.append(matrix[n][y])
@@ -27,9 +35,9 @@ for n,elem in enumerate(matrix):
     elif int(labels[n]) == 3:
         xaxis3.append(matrix[n][x])
         yaxis3.append(matrix[n][y])
-fig=plt.figure()
-ax=fig.add_subplot(111)
-type1=ax.scatter(xaxis1,yaxis1,s=80,c='white')
+fig = plt.figure()
+ax = fig.add_subplot(111)
+type1 = ax.scatter(xaxis1, yaxis1, s=80, c='white')
 type2 = ax.scatter(xaxis2, yaxis2, s=80, c='red')
 type3 = ax.scatter(xaxis3, yaxis3, s=80, c='darkred')
 
@@ -38,6 +46,6 @@ ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.legend([type1, type2, type3], ["Class 1", "Class 2", "Class 3"], loc=1)
 
-ax.grid(True,linestyle='-',color='0.80')
+ax.grid(True, linestyle='-', color='0.80')
 
 plt.show()

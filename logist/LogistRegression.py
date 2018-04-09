@@ -52,7 +52,7 @@ def grad_ascent(data_mat_in, class_labels):
     data_matrix = np.mat(data_mat_in)
     label_mat = np.mat(class_labels).transpose()
     m, n = np.shape(data_matrix)
-    alpha = 0.003  # the learning speed
+    alpha = 0.002  # the learning speed
     max_cycles = 500
     weights = np.zeros((n, 1))
     for k in range(max_cycles):
