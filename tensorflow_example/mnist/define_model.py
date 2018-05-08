@@ -1,6 +1,4 @@
 import tensorflow as tf
-import os
-from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow_example.mnist.get_input_data import load_data
 
 
