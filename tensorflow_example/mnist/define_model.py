@@ -1,6 +1,7 @@
 import tensorflow as tf
 import os
 from tensorflow.examples.tutorials.mnist import input_data
+from tensorflow_example.mnist.get_input_data import load_data
 
 
 def inference(input_tensor, avg_class, l1_weight, l2_weight, l1_bais, l2_bais):
@@ -52,7 +53,7 @@ class MnistClass:
         regularizer = tf.contrib.layers.l2_regularizer(self.regularization_rate)
         regularization = regularizer(weight1) + regularizer(weight2)
 
-        loss = cross_entropy_mean + regularization
+        loss = cross_entropy_mean + regularization  # the method with L2 plus cv to optimize our model
 
         decay_step = mnist.train.num_examples / self.batch_size
         learning_rate = tf.train.exponential_decay(self.learning_rate_base, global_step, decay_step,
@@ -84,8 +85,7 @@ class MnistClass:
 
 
 def main(argv=None):
-    path = os.path.abspath("dataset")
-    mnist = input_data.read_data_sets(path, one_hot=True)
+    mnist = load_data()
     mc = MnistClass()
     mc.train(mnist)
 
