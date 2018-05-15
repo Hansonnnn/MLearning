@@ -6,11 +6,11 @@ def inference(input_tensor, avg_class, l1_weight, l2_weight, l1_bais, l2_bais):
     if avg_class is None:
         layer1 = tf.nn.relu(tf.matmul(input_tensor, l1_weight) + l1_bais)
 
-        return tf.nn.relu(tf.matmul(layer1, l2_weight) + l2_bais)
+        return tf.matmul(layer1, l2_weight) + l2_bais
     else:
         layer1 = tf.nn.relu(tf.matmul(input_tensor, avg_class.average(l1_weight)) + avg_class.average(l1_bais))
 
-        return tf.nn.relu(tf.matmul(layer1, avg_class.average(l2_weight)) + avg_class.average(l2_bais))
+        return tf.matmul(layer1, avg_class.average(l2_weight)) + avg_class.average(l2_bais)
 
 
 class MnistClass:
@@ -23,7 +23,7 @@ class MnistClass:
         self.learning_rate_decay = 0.99  # decay of learning rate
         self.regularization_rate = 0.0001
         self.training_step = 30000
-        self.moving_average_rate = 0.99
+        self.moving_average_decay = 0.99
 
     def train(self, mnist):
         x = tf.placeholder(tf.float32, [None, self.INPUT_NODE], name='x_input')
@@ -39,7 +39,7 @@ class MnistClass:
 
         global_step = tf.Variable(0, trainable=False)
 
-        variable_averages = tf.train.ExponentialMovingAverage(self.moving_average_rate, global_step)
+        variable_averages = tf.train.ExponentialMovingAverage(self.moving_average_decay, global_step)
 
         variable_averages_op = variable_averages.apply(tf.trainable_variables())
 
@@ -79,6 +79,7 @@ class MnistClass:
                     sess.run(train_op, feed_dict={x: xs, y_: ys})
             test_acc = sess.run(accuracy, feed_dict=test_feed)
             print(
+
                 "After %d training step(s) , test accuracy using average model is %g" % (i, test_acc))
 
 

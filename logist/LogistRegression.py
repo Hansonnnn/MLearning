@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-from matplotlib import animation
 from logist.load_data import load_data
 import numpy as np
 import random
